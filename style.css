@@ -1,0 +1,12 @@
+.center_div{
+
+    margin: 0 auto;
+    width:80% 
+}
+#title{
+  font-family:'Raleway';
+}
+.top-background{
+  background-color:#009688;
+  color:white;
+}
