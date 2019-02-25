@@ -2,6 +2,7 @@ const apiKey="c5cefafcd373887acde6ca87dc095f13";
 function getLocation(){
   var location=document.getElementById('location');
   var jsonTag = document.getElementById('jsonFile');
+  var temp=5;
   let searchLink="http://api.openweathermap.org/data/2.5/weather?q="+location.value+"&APPID=" + apiKey;
   fetch(searchLink)
   .then(function(response) {
@@ -11,15 +12,16 @@ function getLocation(){
     var jsonFile=JSON.stringify(myJson);
     console.log(jsonFile);
     var keys = Object.keys(JSON.parse(jsonFile));
-    for(var p in keys){
-      if(keys.hasOwnProperty(p)){
-
-      }
-    }
+    var temp = (9/5)*(myJson.main.temp -273) + 32;
+    temp = Number((temp).toFixed(1));
+    console.log(temp);
+    document.getElementById("temperature").innerHTML = 'Temperature: ' + temp;
+    document.getElementById("humidity_percentage").innerHTML = "Humidity Percentage: " + myJson.main.humidity + "%";
+    document.getElementById("description").innerHTML = "Weather Description: " + myJson.weather[0].description;
+    document.getElementById("cloudiness_percentage").innerHTML = "Cloudiness Percentage " + myJson.clouds.all;
+    console.log("cloudiness percentage: " + myJson.clouds.all);
   });
 
 
 
-
-//{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":288.75,"pressure":1036,"humidity":44,"temp_min":287.15,"temp_max":290.15},"visibility":10000,"wind":{"speed":3.1,"deg":80},"clouds":{"all":0},"dt":1551018000,"sys":{"type":1,"id":1414,"message":0.0034,"country":"GB","sunrise":1550991346,"sunset":1551029544},"id":2643743,"name":"London","cod":200}
 }

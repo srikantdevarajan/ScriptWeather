@@ -1,7 +1,7 @@
 .center_div{
 
     margin: 0 auto;
-    width:80% 
+    width:80%
 }
 #title{
   font-family:'Raleway';
@@ -9,4 +9,10 @@
 .top-background{
   background-color:#009688;
   color:white;
+}
+#location_results{
+  padding-top:2rem;
+}
+.data{
+  font-family:'EB Garamond';
 }
