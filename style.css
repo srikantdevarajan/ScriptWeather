@@ -8,11 +8,16 @@
 }
 .top-background{
   background-color:#009688;
+  transition:1s ease-in-out;
   color:white;
 }
 #location_results{
   padding-top:2rem;
 }
 .data{
-  font-family:'EB Garamond';
+  font-family:'Gentium Basic';
+}
+#banner:hover{
+  background-color:#2196f3;
+  transition:1s ease-in-out;
 }

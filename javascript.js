@@ -2,7 +2,6 @@ const apiKey="c5cefafcd373887acde6ca87dc095f13";
 function getLocation(){
   var location=document.getElementById('location');
   var jsonTag = document.getElementById('jsonFile');
-  var temp=5;
   let searchLink="http://api.openweathermap.org/data/2.5/weather?q="+location.value+"&APPID=" + apiKey;
   fetch(searchLink)
   .then(function(response) {
